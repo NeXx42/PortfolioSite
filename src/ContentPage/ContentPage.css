@@ -29,10 +29,10 @@
 .ContentPage_Container{
     margin: auto;
 
-    width: 60%;
-    height: 1000px;
+    width: calc(1920px * .6);
 
-    padding: 50px;
+    padding: 20px;
+    padding-top: calc((1920px * .6) * (1080 / 1920));
 }
 
 
@@ -40,19 +40,31 @@
 
 div.ContentPage_Header{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 img.ContentPage_Header{
-    width: 70%;
+    width: 100%;
     margin: auto;
 
-    border-radius: 25px;
+    border-radius: 20px;
+
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%); /* For Safari */
 }
 
 h1.ContentPage_Header{
+    position: absolute;
+
+    top: 25px;
+    left: 0px;
+    right: 0px;
+
     margin: auto;
     width: 90%;
 
@@ -63,4 +75,46 @@ h1.ContentPage_Header{
 
     text-align: center;
     box-sizing: border-box;
+
+    z-index: 100;
+}
+
+
+
+
+
+.ContentPage_Content{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.ContentPage_Images{
+    flex-grow: 0;
+    
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ContentPage_Image{
+    width: 100%;
+    border-radius: 10px;
+}
+
+img.ContentPage_ShowAllImages{
+    filter: blur(5px);
+    cursor: pointer;
+}
+
+
+
+
+.ContentPage_Entries{
+    order: -1;
+    flex-grow: 1;
 }

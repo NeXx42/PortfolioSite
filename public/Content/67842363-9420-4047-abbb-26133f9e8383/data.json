@@ -1,3 +1,7 @@
 {
-    "Name": "test"
+    "Name": "FPS Rouge Like",
+    "images":[
+        "Icon.png",
+        "Icon.png"
+    ]
 }

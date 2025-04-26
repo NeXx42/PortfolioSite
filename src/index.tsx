@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter , Route, Routes } from 'react-router-dom';
 
 import './index.css';
 
@@ -21,11 +21,11 @@ const dataFetcher = new DataFetcherEndpoint(new DataFetcher_Json());
 root.render(
   <React.StrictMode>
     <Topbar />
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
         <Routes>
             <Route path="/" element={<App dataFetcher={dataFetcher}/>}></Route>
-            <Route path="/:desiredPageId/content" Component={ContentPage}></Route>
+            <Route path="/:desiredPageId/content" element={<ContentPage dataFetcher={dataFetcher}/>}></Route>
         </Routes>
-    </BrowserRouter>
+    </HashRouter >
   </React.StrictMode>
 );
