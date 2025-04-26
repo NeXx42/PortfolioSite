@@ -1,0 +1,74 @@
+.Homepage_ContentGroup{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+
+
+
+.Homepage_ContentNode{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 20px;
+
+    transition: all .1s;
+}
+
+.Homepage_ContentNode:hover{
+    background-color: black;
+    cursor: pointer;
+    transform: scale(1.02);
+    z-index: 10;
+}
+
+
+img.Homepage_ContentNode_Icon{
+    width: 330px;
+    border-radius: 15px;
+}
+
+div.Homepage_ContentNode_Info{
+    display: flex;
+    flex-direction: column;
+}
+
+span.Homepage_ContentNode_Info{
+    font-size: 25px;
+}
+
+p.Homepage_ContentNode_Info{
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+button.Homepage_ContentNode_Info{
+    margin-top: auto;
+
+    border-radius: 20px;
+    background-color: #394fd8;
+
+    border: none;
+    color: white;
+    height: 30px;
+    width: 100px;
+    margin-left: auto;
+
+    opacity: 0;
+    transform: scale(.5);
+
+    transition: all .1s;
+}
+
+.Homepage_ContentNode:hover .Homepage_ContentNode_Info button{
+    display: inline;
+    transform: scale(1);
+    opacity: 1;
+}

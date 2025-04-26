@@ -1,0 +1,115 @@
+.Homepage_BG{
+    filter: blur(2px);
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transition: all .01s;
+}
+
+.Homepage_Previews{
+    position: absolute;
+
+    --resolutionDivision: 2.3;
+
+    top: calc((100vh / 2) - (1080px / (var(--resolutionDivision) * 2)) - 50px);
+    left: calc((100vw / 2) - (1920px / (var(--resolutionDivision) * 2)));
+
+    width: calc(1920px / var(--resolutionDivision));
+    height: calc((1080px / var(--resolutionDivision)) + 65px);
+
+    background-color: var(--Colours-BG);
+    border-radius: 25px;
+
+
+    display: flex;
+
+    justify-content: center; /* horizontal center */
+    align-items: top;     /* vertical center */
+
+    padding: 5px;
+
+    filter: drop-shadow(0px 0px 13px #000000);
+}
+
+img.Homepage_Entry{
+    position: relative;
+    width: 100%;
+    height: min-content;
+
+    border-radius: 20px;
+}
+
+span.Homepage_Entry{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+
+    color: white;
+    padding: 10px 20px 10px 20px;
+
+    font-size: 18px;
+}
+
+button.Homepage_Entry{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+
+    height: 40px;
+    width: 200px;
+
+    border-radius: 20px;
+    background-color: #394fd8;
+
+    border: none;
+    color: white;
+}
+
+
+.Homepage_ContentFitter{
+    position: absolute;
+
+    left: 0px;
+    top: calc(100vh - 20px);
+
+    width: 100%;
+
+    padding-bottom: 50px;
+}
+
+
+
+
+
+
+
+.Homepage_Content{
+    margin: auto;
+    
+    width: 90%;
+
+    background-color: var(--Colours-BG);
+    border-radius: 25px;
+
+    filter: drop-shadow(0px 0px 10px #000000);
+
+    box-sizing: border-box;
+    padding: 100px;
+}
+
+
+.Hompage_Content_Header{
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+
+    background: #000000;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+}
