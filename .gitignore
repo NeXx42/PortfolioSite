@@ -21,3 +21,17 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# vscode settings 
+.vscode/
+
+# parcel-bundler cache (rare)
+.cache/
+
+# typescript build output
+*.tsbuildinfo
