@@ -1,5 +1,5 @@
 {
-    "Name": "Dungeon Crawler",
+    "Name": "Polydefense",
     "images":[
         "screenshot_1.webp",
         "screenshot_2.webp",
@@ -8,5 +8,34 @@
         "screenshot_5.webp",
         "screenshot_6.webp",
         "screenshot_7.webp"
+    ],
+    "tags": [
+        "Survival",
+        "Low Poly"
+    ],
+    "content": [
+        {
+            "type":"description",
+            "content": "A simple tower defence that can be easily played at anytime. Super simple mechanics mean this is easy to learn.\n\nGame modes\n• Infinite\n• Classic - ( 10, 15, .., 40 ) Rounds"
+        },
+        {
+            "type": "controls",
+            "Entries": [
+                { "label": "Install", "link": "" }
+            ]
+        },
+        {
+            "type":"release",
+            "Entries": [
+                {
+                    "title": "Release",
+                    "description": "First Release of the game",
+                    "date": "Nov 9, 2021",
+                    "visuals": [
+                        { "img": "screenshot_1.webp" }
+                    ]
+                }
+            ]
+        }
     ]
 }

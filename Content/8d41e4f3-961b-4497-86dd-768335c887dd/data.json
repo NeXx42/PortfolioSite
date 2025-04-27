@@ -1,5 +1,6 @@
 {
     "Name": "Dungeon Crawler",
+    "hideName": true,
     "images":[
         "1.png",
         "2.png",
@@ -9,5 +10,42 @@
         "6.png",
         "7.png",
         "8.png"
+    ],
+    "tags":[
+        "Low poly",
+        "Mobile"
+    ],
+    "content":[
+        {
+            "type": "description",
+            "content": "A low poly fantasy style turn based dungeon crawler. Fight through hoards of varying enemies with different attacks, leaning the best way to tackle them while keeping as much health as possible.\n\nEach time you play can result in a drastically different experience with different types of loot, different amounts of enemies, and different leveling paths. Adapt your play style to find the most efficient way to beat the end boss. "
+        },
+        {
+            "type": "controls",
+            "Entries": [
+                { "label": "Install", "link": "" }
+            ]
+        },
+        {
+            "type": "release",
+            "Entries": [
+                {
+                    "title": "Relase 2.0",
+                    "description": "<strong>Changelog:</strong>\n&#x2022; Complete UI Redesign,\n&#x2022; Separated classes,\n&#x2022; Added magical weapons and other weapon types,\n&#x2022; Added armour,\n&#x2022; Added shop,\n&#x2022; Redesigned how map sections are provided,\n&#x2022; Allowed support for attacks to target multiple opponents,\n&#x2022; Added new consumables,\n&#x2022; Allowed support for some weapons to be embued,\n&#x2022; Improved leveling process,\n&#x2022; Improved VFX for different moves and actions,\n&#x2022; Allowed support for round dependent afflictions ",
+                    "date": "Nov 25, 2022",
+                    "visuals": [
+                        { "img": "8.png", "padded":true }
+                    ]
+                },
+                {
+                    "title": "Release",
+                    "description": "First Release of the game",
+                    "date": "Oct 24, 2021",
+                    "visuals": [
+                        { "img": "Icon.png" }
+                    ]
+                }
+            ]
+        }
     ]
 }
