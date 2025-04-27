@@ -5,5 +5,95 @@
         "screenshot3.png",
         "screenshot4.png",
         "screenshot5.png"
+    ],
+    "content": [
+
+        {
+            "type": "Devlog",
+            "Entries": [
+                {
+                    "title": "Hunting",
+                    "description": "A showcase of some early work on Hunting and animal AI.",
+                    "date": "Sep 16, 2021",
+                    "visuals": [
+                        { "img": "HuntingBG.png" },
+                        { "vid": "szovCEVkpQQ" }
+                    ]
+                },
+                {
+                    "title": "durability And recycling",
+                    "description": "A showcase of some early work on item durability, repairing, and recycling.",
+                    "date": "Sep 6, 2021",
+                    "visuals": [
+                        { "img": "itemdurbg.png" },
+                        { "vid": "X5Ty74YJLCk" }
+                    ]
+                },
+                {
+                    "title": "Raiding",
+                    "description": "A showcase of randomly spawning bases, and the ability to raid them for loot.",
+                    "date": "Apr 11, 2021",
+                    "visuals": [
+                        { "img": "raidingrandombases.png" },
+                        { "vid": "Yyer2_OreT4" }
+                    ]
+                },
+                {
+                    "title": "Modular Attachments",
+                    "description": "A showcase of the Monuments i have been working on.<br> Also been working on consumable, and road side junk piles",
+                    "date": "Apr 8, 2021",
+                    "visuals": [
+                        { "img": "attach.png" },
+                        { "vid": "b9VC2es_FCQ" }
+                    ]
+                },
+                {
+                    "title": "Monuments",
+                    "description": "A showcase of the Monuments i have been working on.<br> Also been working on consumable, and road side junk piles",
+                    "date": "Apr 8, 2021",
+                    "visuals": [
+                        { "img": "pic1.jpg" },
+                        { "vid": "e9jAuhLQKms" }
+                    ]
+                },
+                {
+                    "title": "Boats",
+                    "description": "A quick show case of boats that i had added to the game.",
+                    "date": "Mar 1, 2021",
+                    "visuals": [
+                        { "img": "1.jpg" },
+                        { "vid": "MSKBRHVEqJE" }
+                    ]
+                },
+                {
+                    "title": "Weapon Showcase",
+                    "description": "A showcase of the weapons in the game.",
+                    "date": "Apr 8, 2021",
+                    "visuals": [
+                        { "img": "weapons.jpg" },
+                        { "vid": "alGJ4-LnhYQ" }
+                    ]
+                },
+                {
+                    "title": "Fire",
+                    "description": "Added the ability to smelt ores into their ingots and light fires.",
+                    "date": "Feb 21, 2021",
+                    "visuals": [
+                        { "img": "fire.jpg" },
+                        { "vid": "5IP3EJ70v20" }
+                    ]
+                },
+                {
+                    "title": "Dynamite",
+                    "description": "Added the ability to use dynamite to explode doors and other player built locations",
+                    "date": "Feb 19, 2021",
+                    "visuals": [
+                        { "img": "dynamite.jpg" },
+                        { "vid": "Zhj_1nNYews" }
+                    ]
+                }
+            ]
+        }
+
     ]
 }
