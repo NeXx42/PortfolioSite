@@ -92,7 +92,7 @@ button.Homepage_Entry{
 .Homepage_Content{
     margin: auto;
     
-    width: 90%;
+    width: calc(1920px * .9);
 
 
     padding: 100px;
@@ -107,4 +107,16 @@ button.Homepage_Entry{
 
     background: #000000;
     background: linear-gradient(90deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+
+
+.Homepage_Content_Links{
+    width: calc(100% + 200px);
+    height: 400px;
+
+    margin-left: -100px;
+
+    background-color: black;
 }

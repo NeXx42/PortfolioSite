@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import "./ContentPage.css"
 import { DataFetcherEndpoint, PageContent } from "../utils/DataFetcher";
 
+import Content_Devlog from "./Components/Devlog"
+
 interface ContentPageState{
     scrollY: number;
     content: PageContent | undefined;
@@ -66,6 +68,17 @@ class ContentPage extends React.Component<ContentPageProps, ContentPageState>{
         
                                 <div className="ContentPage_Content">
                                     <div className="ContentPage_Entries">
+                                        {
+                                            this.state.content.content?.map((x) => {
+                                                switch(String(x.type ?? "").toLowerCase()){
+
+                                                    case "devlog":
+                                                        return (<Content_Devlog pageId={this.props.ContentPageId ?? ""} data={x} />);
+                                                }
+
+                                                return (<></>)
+                                            })
+                                        }
                                     </div>
                                     {
                                         (this.state.content.images?.length  ?? 0) > 0 ?
@@ -77,9 +90,7 @@ class ContentPage extends React.Component<ContentPageProps, ContentPageState>{
                                                             return (
                                                                 <div onClick={() => this.setState({ showAllPics: true })} className="ContentPage_ShowAllImages">
                                                                     <img src={`/PortfolioSite/Content/${this.props.ContentPageId}/${x}`} className="ContentPage_ShowAllImages ContentPage_Image"/>
-                                                                    <div className="ContentPage_ShowAllImages_Container">
-                                                                        <span className="ContentPage_ShowAllImages">Show more</span>
-                                                                    </div>
+                                                                    <span className="ContentPage_ShowAllImages">Show more</span>
                                                                 </div>
                                                             )
                                                         }

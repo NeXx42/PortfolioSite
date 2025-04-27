@@ -8,10 +8,9 @@ export interface HomePageData{
 
 export interface PageContent{
     name: string,
-    images: string[]
+    images: string[],
+    content: any[]
 }
-
-
 
 
 export interface IDataFetchEndpoints{
@@ -35,7 +34,8 @@ export class DataFetcherEndpoint{
 
         return { 
             name: response.Name, 
-            images: response.images
+            images: response.images,
+            content: response.content
         };
     }
 
@@ -43,7 +43,6 @@ export class DataFetcherEndpoint{
         const response = await this.dataFetcher.GetHomePageData();
 
         const mappedResponse: HomePageData[] = response.Content.map((x: any) => {
-            console.log(x.Updated)
             return {
                 name: x.Name,
                 id: x.PageId,

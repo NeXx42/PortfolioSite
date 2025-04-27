@@ -1,11 +1,10 @@
 import './Homepage.css';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Homepage_ContentGroup from './Homepage_ContentGroup';
 
 import { HomePageData, DataFetcherEndpoint } from "../utils/DataFetcher"
 
-const bgScrollLimit = 200;
 const bgScrollSizeLimit = 0.2;
 
 interface props{
@@ -28,7 +27,6 @@ const App: React.FC<props> = ({ dataFetcher }) => {
                 let latestIndex = 0;
 
                 x.map((x, pos) => {
-                    console.log(x.updatedDate)
                     if (x.updatedDate != undefined){
                         if(latestDate == undefined || latestDate! <= x.updatedDate){
                             latestIndex = pos;
@@ -42,13 +40,14 @@ const App: React.FC<props> = ({ dataFetcher }) => {
         });
 
         const onScroll = () => {
-            setScollY(1 + Math.min(window.scrollY / bgScrollLimit, 1) * bgScrollSizeLimit);
+            setScollY(1 + Math.min(window.scrollY / window.outerHeight, 1) * bgScrollSizeLimit);
         };
 
         window.addEventListener("scroll", onScroll);
-        
 
-        return () => window.removeEventListener("scroll", onScroll);
+        return () =>{
+            window.removeEventListener("scroll", onScroll);
+        } 
     }, []);
 
   return (
@@ -68,10 +67,14 @@ const App: React.FC<props> = ({ dataFetcher }) => {
 
                 <div className='Homepage_ContentFitter'>
                     <div className='Homepage_Content Panel'>
-                        <div className='Hompage_Content_Header'><h2>Games</h2></div>
-                        <Homepage_ContentGroup content={content?.filter(x => x.type == 0)}/>
+                        <div id='selection1' className='Hompage_Content_Header'><h2>Games</h2></div>
+                        <Homepage_ContentGroup  content={content?.filter(x => x.type == 0)}/>
                         <div className='Hompage_Content_Header'><h2>Projects</h2></div>
                         <Homepage_ContentGroup content={content?.filter(x => x.type == 1)}/>
+
+                        <div className='Homepage_Content_Links'>
+
+                        </div>
                     </div>
                 </div>
             </>)

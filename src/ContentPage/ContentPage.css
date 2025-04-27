@@ -32,7 +32,7 @@
     width: calc(1920px * .6);
 
     padding: 20px;
-    padding-top: calc((1920px * .6) * (1080 / 1920));
+    padding-top: calc((1920px * .65) * (1080 / 1920));
 }
 
 
@@ -88,17 +88,19 @@ h1.ContentPage_Header{
 
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 50px;
 }
 
 .ContentPage_Images{
     flex-grow: 0;
-    
-    width: 300px;
 
+    width: 400px;
+    
     display: flex;
+    flex-grow: column;
+
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 .ContentPage_Image{
@@ -106,15 +108,32 @@ h1.ContentPage_Header{
     border-radius: 10px;
 }
 
+.ContentPage_ShowAllImages{
+    position: relative;
+}
+
 img.ContentPage_ShowAllImages{
     filter: blur(5px);
     cursor: pointer;
 }
 
+span.ContentPage_ShowAllImages{
+    position: absolute;
+
+    left: 0px;
+    right: 0px;
+
+    text-align: center;
+    top: 50%;
+    font-size: 25px;
+
+    cursor: pointer;
+}
 
 
 
 .ContentPage_Entries{
     order: -1;
     flex-grow: 1;
+    width: 100%;
 }
