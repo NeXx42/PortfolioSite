@@ -10,7 +10,6 @@
     height: 100%;
 
     transition: all .01s;
-    transform: scale(1.1);
 
     overflow: scroll;
 }
@@ -136,4 +135,47 @@ span.ContentPage_ShowAllImages{
     order: -1;
     flex-grow: 1;
     width: 100%;
+}
+
+.ContentPage_Entries > pre{
+    margin-bottom: 15px;
+    text-align: center;
+    text-wrap-mode: wrap;
+}
+
+.ContentPage_Entries_Header{
+    margin: auto;
+    width: 100%;
+
+    background: #000000;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+
+    padding: 10px;
+
+    text-align: center;
+    box-sizing: border-box;
+
+    margin-bottom: 25px;
+}
+
+.ContentPage_Entries_Tags{
+    width: 100%;
+
+    display: flex;
+    gap: 10px;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+}
+
+.ContentPage_Entries_Tags > div{
+    background-color: rgb(50, 50, 50);
+    padding: 10px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+
+    font-size: 12px;
 }

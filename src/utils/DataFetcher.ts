@@ -8,7 +8,9 @@ export interface HomePageData{
 
 export interface PageContent{
     name: string,
+    hideName: boolean,
     images: string[],
+    tags: string[],
     content: any[]
 }
 
@@ -34,7 +36,9 @@ export class DataFetcherEndpoint{
 
         return { 
             name: response.Name, 
+            hideName: response.hideName ?? false,
             images: response.images,
+            tags: response.tags?.map((x: any) => String(x)) ?? [],
             content: response.content
         };
     }

@@ -5,11 +5,13 @@ import "./ContentPage.css"
 import { DataFetcherEndpoint, PageContent } from "../utils/DataFetcher";
 
 import Content_Devlog from "./Components/Devlog"
+import Content_Controls from "./Components/Controls";
 
 interface ContentPageState{
     scrollY: number;
     content: PageContent | undefined;
     showAllPics: boolean;
+    bgZoom: number,
 }
 
 interface ContentPageProps{
@@ -19,6 +21,7 @@ interface ContentPageProps{
 
 
 const pictureLimit: number = 5;
+const bgScrollSizeLimit = 100;
 
 class ContentPage extends React.Component<ContentPageProps, ContentPageState>{
 
@@ -27,6 +30,7 @@ class ContentPage extends React.Component<ContentPageProps, ContentPageState>{
 
         this.state = {
             scrollY: 0,
+            bgZoom: -(bgScrollSizeLimit / 2),
             content: undefined,
             showAllPics: false
         }
@@ -45,6 +49,7 @@ class ContentPage extends React.Component<ContentPageProps, ContentPageState>{
     }
     
     OnScroll(){
+        this.setState({ bgZoom: (Math.min(window.scrollY / document.documentElement.scrollHeight, 1) * bgScrollSizeLimit) - (bgScrollSizeLimit / 2) })
         this.setState({ scrollY: window.scrollY });
     }
 
@@ -53,8 +58,7 @@ class ContentPage extends React.Component<ContentPageProps, ContentPageState>{
     {
         return (
             <div className="ContentPage">
-                <a>{this.state.scrollY}</a>
-                <img className='ContentPage_BG' src='/PortfolioSite/Images/Wilderness.png'/>
+                <img className='ContentPage_BG' style={{ transform: `translateY(${-this.state.bgZoom}px) scale(1.1)` }} src='/PortfolioSite/Images/Wilderness.png'/>
 
                 {
                     this.props.ContentPageId && this.state.content ?
@@ -62,18 +66,35 @@ class ContentPage extends React.Component<ContentPageProps, ContentPageState>{
                         <div className="ContentPage_Fitter">
                             <div className="ContentPage_Container Panel">
                                 <div className="ContentPage_Header">
-                                    <h1 className="ContentPage_Header">{this.state.content?.name}</h1>
                                     <img className="ContentPage_Header" src= {`/PortfolioSite/Content/${this.props.ContentPageId}/Icon.png`}/>
                                 </div>
         
                                 <div className="ContentPage_Content">
                                     <div className="ContentPage_Entries">
+                                        <h1 className="ContentPage_Entries_Header">{this.state.content?.name}</h1>
+                                        <div className="ContentPage_Entries_Tags">
+                                            {
+                                                this.state.content.tags.map((x: string) => {
+                                                    return (<div>{x}</div>)
+                                                })
+                                            }
+                                        </div>
+
                                         {
                                             this.state.content.content?.map((x) => {
                                                 switch(String(x.type ?? "").toLowerCase()){
 
                                                     case "devlog":
-                                                        return (<Content_Devlog pageId={this.props.ContentPageId ?? ""} data={x} />);
+                                                        return (<Content_Devlog title={"Devlog"} pageId={this.props.ContentPageId ?? ""} data={x} />);
+
+                                                    case "release":
+                                                        return (<Content_Devlog title={"Releases"} pageId={this.props.ContentPageId ?? ""} data={x} />);
+
+                                                    case "controls":
+                                                        return (<Content_Controls pageId={this.props.ContentPageId ?? ""} data={x} />)
+
+                                                    case "description":
+                                                        return (<pre dangerouslySetInnerHTML={{ __html:x.content }}></pre>)
                                                 }
 
                                                 return (<></>)

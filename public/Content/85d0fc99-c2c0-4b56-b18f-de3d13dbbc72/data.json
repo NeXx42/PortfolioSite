@@ -6,8 +6,17 @@
         "screenshot4.png",
         "screenshot5.png"
     ],
+    "tags":[
+        "Low poly",
+        "VR",
+        "FPS",
+        "Survival"
+    ],
     "content": [
-
+        {
+            "type": "description",
+            "content": "A project im currently working on which is a survival game based in vr."
+        },
         {
             "type": "Devlog",
             "Entries": [

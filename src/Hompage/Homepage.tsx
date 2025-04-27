@@ -1,11 +1,11 @@
 import './Homepage.css';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Homepage_ContentGroup from './Homepage_ContentGroup';
 
 import { HomePageData, DataFetcherEndpoint } from "../utils/DataFetcher"
 
-const bgScrollSizeLimit = 0.2;
+const bgScrollSizeLimit = 100;
 
 interface props{
     dataFetcher: DataFetcherEndpoint
@@ -14,7 +14,7 @@ interface props{
 
 const App: React.FC<props> = ({ dataFetcher }) => {
 
-    const [scrollY, setScollY] = useState(1);
+    const [scrollY, setScollY] = useState(-bgScrollSizeLimit / 2);
     const [content, loadContent] = useState<HomePageData[] | undefined>(undefined);
     const [latestContent, setLatestContent] = useState<number>(0);
 
@@ -40,7 +40,8 @@ const App: React.FC<props> = ({ dataFetcher }) => {
         });
 
         const onScroll = () => {
-            setScollY(1 + Math.min(window.scrollY / window.outerHeight, 1) * bgScrollSizeLimit);
+            setScollY( (Math.min(window.scrollY / document.documentElement.scrollHeight, 1) * bgScrollSizeLimit) - (bgScrollSizeLimit / 2) );
+            console.log(scrollY);
         };
 
         window.addEventListener("scroll", onScroll);
@@ -52,7 +53,7 @@ const App: React.FC<props> = ({ dataFetcher }) => {
 
   return (
     <div className="Homepage">
-        <img className='Homepage_BG' src='/PortfolioSite/Images/Wilderness.png' style={{ transform: `scale(${scrollY})` }}/>
+        <img className='Homepage_BG' src='/PortfolioSite/Images/Wilderness.png' style={{ transform: `translateY(${-scrollY}px) scale(1.1)` }}/>
 
         { content == undefined ? 
             ( <a>Loading</a> )

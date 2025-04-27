@@ -11,6 +11,7 @@ import ContentPage from './ContentPage/ContentPage';
 
 import { DataFetcherEndpoint } from "./utils/DataFetcher"
 import { DataFetcher_Json } from './utils/DataFetcher_Json';
+import PageLoader from './Components/PageLoader';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -21,6 +22,7 @@ const dataFetcher = new DataFetcherEndpoint(new DataFetcher_Json());
 root.render(
   <React.StrictMode>
     <Topbar />
+
     <HashRouter>
         <Routes>
             <Route path="/" element={<App dataFetcher={dataFetcher}/>}></Route>

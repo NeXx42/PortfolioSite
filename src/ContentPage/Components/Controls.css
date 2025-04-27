@@ -1,0 +1,16 @@
+.Content_Controls{
+    width: 100%;
+    height: 90px;
+    margin-bottom: 50px;
+
+    padding: 25px;
+
+    display: flex;
+    justify-content: right;
+    box-sizing: border-box;
+}
+
+.Content_Controls > button{
+    padding: 5px;
+    width: 150px;
+}

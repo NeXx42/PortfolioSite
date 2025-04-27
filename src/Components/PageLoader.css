@@ -1,0 +1,31 @@
+.PageLoader{
+    position: fixed;
+
+    width: 500vh;
+    height: 500vh;
+
+    left: 50%;
+    top: 50%;
+
+    transform: scale(0) translate(-50%, -50%);
+    
+    z-index: 100000;
+    background-color: black;
+
+    border-radius: 9999999px;
+
+    animation-name: loadPage;
+    animation-duration: 2s;
+}
+
+
+@keyframes loadPage{
+    from{
+        transform: translate(-50%, -50%) scale(0);
+        display: inline;
+    }
+    100%{
+        transform: translate(-50%, -50%) scale(1);
+        display: none;
+    }
+}

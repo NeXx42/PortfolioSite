@@ -4,7 +4,7 @@ import "./Devlog.css"
 
 const contentLimit = 2;
 
-export default class Content_Devlog extends React.Component<{ pageId: string, data: any }, { loadedContentCount: number }>{
+export default class Content_Devlog extends React.Component<{ pageId: string, data: any, title: string }, { loadedContentCount: number }>{
 
     constructor(props: any){
         super(props)
@@ -18,7 +18,7 @@ export default class Content_Devlog extends React.Component<{ pageId: string, da
     {
         return (
             <div className="Content_Devlog">
-                <h2>Devlogs</h2>
+                <h2 className="ContentPage_Entries_Header">{ this.props.title }</h2>
                 <div className="Content_Develog_Timeline"></div>
                 { 
                     this.state.loadedContentCount > 0 ? (                    
@@ -34,6 +34,15 @@ export default class Content_Devlog extends React.Component<{ pageId: string, da
                                                 (
                                                     x.visuals.map((v: any) => {
                                                         if(v.img != undefined){
+                                                            if(v.padded ?? false){
+                                                                return (
+                                                                    <div className="Content_Devlog_Entry_Content_Visuals_PaddedIMG">
+                                                                        <img src={`/PortfolioSite/Content/${this.props.pageId}/${v.img}`}/>
+                                                                        <img src={`/PortfolioSite/Content/${this.props.pageId}/${v.img}`}/>
+                                                                    </div>
+                                                                )
+                                                            }
+
                                                             return (<img src={`/PortfolioSite/Content/${this.props.pageId}/${v.img}`}/>)
                                                         }
                                                         else if(v.vid != undefined){
@@ -42,7 +51,7 @@ export default class Content_Devlog extends React.Component<{ pageId: string, da
                                                                     `<iframe width="100%" height="100%" src=https://www.youtube.com/embed/${v.vid} title="YouTube video player" frameBorder=0 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>`
                                                                 }} />
                                                             ) */
-                                                                return (<></>)
+                                                            return (<></>)
 
                                                         }
                                                         
@@ -51,7 +60,7 @@ export default class Content_Devlog extends React.Component<{ pageId: string, da
                                             }
                                         </div>
 
-                                        <p>{x.description}</p>
+                                        <pre dangerouslySetInnerHTML={{ __html: x.description }}></pre>
                                     </div>
                                 </div>
                             )

@@ -1,18 +1,6 @@
 .Content_Devlog > h2{
-    width: 90%;
-    padding: 10px;
-
     margin: auto;
-    text-align: center;
-
-    box-sizing: border-box;
-
-    background: #000000;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
-
-    margin-bottom: 43px;
-
-    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 .Content_Devlog{
@@ -44,8 +32,6 @@
 
 
 .Content_Devlog_Entry span{
-    margin-left: 10px;
-
     background-color: black;
     padding: 5px;
 }
@@ -54,10 +40,13 @@
     width: 100%;
     font-size: 20px;
 
+    padding-left: 15px !important;
     padding-top: 15px !important;
     padding-bottom: 15px !important;
 
     background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%) !important;
+
+    z-index: 5;
 }
 
 .Content_Devlog_Entry_Date{
@@ -68,6 +57,7 @@
     background-color: #141414 !important;
 
     border-radius: 0px 0px 20px 0px;
+    padding-left: 15px !important;
 }
 
 
@@ -83,8 +73,10 @@
     width: 100%;
 }
 
-.Content_Devlog_Entry_Content p{
+.Content_Devlog_Entry_Content pre{
     font-size: 13px;
+    width: 100%;
+    text-wrap-mode: wrap;
 }
 
 
@@ -105,4 +97,42 @@
     width: 200px;
 
 
+}
+
+.Content_Devlog_Entry_Content_Visuals_PaddedIMG{
+    height: 200px;
+
+    display: flex;
+    padding: 10px;
+
+    background-color: black;
+    border-radius: 25px;
+
+    position: relative;
+    overflow: hidden;
+
+    filter: drop-shadow(0px 0px 10px #000000);
+}
+
+.Content_Devlog_Entry_Content_Visuals_PaddedIMG > img:first-child{
+    position: absolute;
+    width: 100%;
+    height: auto;
+
+    left: 0px;
+    top: 0px;
+
+    filter: blur(5px);
+}
+
+.Content_Devlog_Entry_Content_Visuals_PaddedIMG > img{
+    height: 100%;
+    width: auto;
+    margin: auto;
+    z-index: 10;
+}
+
+.Content_Devlog_Entry_Content_Visuals > img{
+    filter: drop-shadow(0px 0px 10px #000000);
+    border-radius: 25px;
 }
