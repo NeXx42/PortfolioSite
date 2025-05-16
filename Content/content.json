@@ -23,13 +23,15 @@
             "Name": "FPS Rouge like",
             "Description": "A first person shooter where you fight hoards of enemies with varying attack patterns. Killing these enemies reward you with souls that can be used to gather different abilites to aid you in your gameplay.",
             "Catagory": 1,
-            "Updated": "2025-04-26"
+            "Updated": "2025-04-26",
+            "Disabled": true
         },
         {  
             "PageId": "67842363-9420-4047-abbb-26133f9e8383",
             "Name": "Low poly Survival game",
             "Description": "",
-            "Catagory": 1
+            "Catagory": 1,
+            "Disabled": true
         }
     ]
 }
