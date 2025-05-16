@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Topbar.css"
 
-
+import { RedirectHomePage } from "../utils/Helpers"
 
 export default class Topbar extends React.Component<any, { scrollY: number }>{
 
@@ -23,13 +23,13 @@ export default class Topbar extends React.Component<any, { scrollY: number }>{
     render(): React.ReactNode {
         return (
             <div className='Topbar' data-active={this.state.scrollY > 0 ? "active" : "inactive" }>
-                <img src="/PortfolioSite/Images/Profile.png"/>
+                <img id="ProfileIcon" onClick={() => RedirectHomePage()} src="/PortfolioSite/Images/Profile.png"/>
                 <div>
                     <ul>
-                        <li><span className="Topbar_Entry">Home</span></li>
-                        <li><span className="Topbar_Entry">Projects</span></li>
-                        <li><span className="Topbar_Entry">Games</span></li>
-                        <li><span className="Topbar_Entry">Links</span></li>
+                        <li><span onClick={() => RedirectHomePage()} className="Topbar_Entry">Home</span></li>
+                        <li><span onClick={() => RedirectHomePage("Projects")} className="Topbar_Entry">Projects</span></li>
+                        <li><span onClick={() => RedirectHomePage("Games")} className="Topbar_Entry">Games</span></li>
+                        <li><span onClick={() => RedirectHomePage("Links")} className="Topbar_Entry">Links</span></li>
                     </ul>
                 </div>
             </div>

@@ -39,6 +39,7 @@ class ContentPage extends React.Component<ContentPageProps, ContentPageState>{
             this.props.dataFetcher.GetPageContent(this.props.ContentPageId).then(x => this.setState({ content: x }));
         }
 
+        window.scrollTo(0, 0);
         this.OnScroll = this.OnScroll.bind(this);
     }
 

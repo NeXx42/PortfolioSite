@@ -26,6 +26,16 @@
     transition: all .1s;
 }
 
+#ProfileIcon{
+    cursor: pointer;
+    transform: .1s all;
+}
+
+#ProfileIcon:hover{
+    transform: scale(1.1);
+}
+
+
 .Topbar[data-active="active"]{
     height: 40px;
 }

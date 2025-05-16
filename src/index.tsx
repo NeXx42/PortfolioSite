@@ -26,6 +26,8 @@ root.render(
     <HashRouter>
         <Routes>
             <Route path="/" element={<App dataFetcher={dataFetcher}/>}></Route>
+            <Route path="/:scrollTo" element={<App dataFetcher={dataFetcher}/>}></Route>
+            
             <Route path="/:desiredPageId/content" element={<ContentPage dataFetcher={dataFetcher}/>}></Route>
         </Routes>
     </HashRouter >

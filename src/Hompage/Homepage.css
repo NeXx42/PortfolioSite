@@ -8,8 +8,6 @@
 
     width: 100%;
     height: 100%;
-
-    transition: all .01s;
 }
 
 .Homepage_Previews{
@@ -114,9 +112,36 @@ button.Homepage_Entry{
 
 .Homepage_Content_Links{
     width: calc(100% + 200px);
-    height: 400px;
+    height: 170px;
 
     margin-left: -100px;
+    padding: 20px 500px;
+
+    box-sizing: border-box;
 
     background-color: black;
+
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.Links_Entry{
+    position: relative;
+    width: 100%;
+}
+
+.Links_Entry img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+    transition: all .1s;
+
+    border-radius: 5px;
+}
+
+.Links_Entry img:hover{
+    transform: scale(1.05);
 }

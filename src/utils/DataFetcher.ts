@@ -46,7 +46,7 @@ export class DataFetcherEndpoint{
     async GetHomePageData(): Promise<HomePageData[]> {
         const response = await this.dataFetcher.GetHomePageData();
 
-        const mappedResponse: HomePageData[] = response.Content.map((x: any) => {
+        const mappedResponse: HomePageData[] = response.Content.filter((x: any) => !(x.Disabled ?? false)).map((x: any) => {
             return {
                 name: x.Name,
                 id: x.PageId,
