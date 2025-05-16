@@ -88,13 +88,13 @@ const App: React.FC<props> = ({ dataFetcher }) => {
 
                         <div id="Links" className='Homepage_Content_Links'>
                             <a href='https://www.youtube.com/@nexx42' className='Links_Entry'>
-                                <img src='PortfolioSite/Images/Links/link_youtube.png'/>
+                                <img src='/PortfolioSite/Images/Links/link_youtube.png'/>
                             </a>
                             <a href='https://github.com/NeXx42' className='Links_Entry'>
-                                <img src='PortfolioSite/Images/Links/link_github.png'/>
+                                <img src='/PortfolioSite/Images/Links/link_github.png'/>
                             </a>
                             <a href='https://x.com/nexx42_' className='Links_Entry'>
-                                <img src='PortfolioSite/Images/Links/link_twitter.png'/>
+                                <img src='/PortfolioSite/Images/Links/link_twitter.png'/>
                             </a>
                         </div>
                     </div>
